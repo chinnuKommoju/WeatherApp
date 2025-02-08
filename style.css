@@ -1,90 +1,152 @@
-body{
-  padding:0;
-  margin:0 auto;
-  height:100vh;
+body {
+  padding: 0;
+  margin: 0 auto;
+  height: 100vh;
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  color:black;
-  padding-top:30px;
-} 
+  color: black;
+  padding-top: 30px;
+  text-align: center;
+}
 .search {
-  width:60px;
-  height:60px;
+  width: 60px;
+  height: 60px;
   transition: transform 0.3s ease;
-  border:0;
-  outline:0;
-  border-radius:50%;
-  background:0;
-  margin-top:-15px;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  background: none;
+  margin-top: -15px;
+  cursor: pointer;
 }
-.search:hover{
-  transform:scale(1.10);
+.search:hover {
+  transform: scale(1.1);
 }
-
-.main{
-  min-width:600px;
-  display:flex;
-  flex-direction:column;
+.main {
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.query{
-  display:flex;
-  justify-content:space-around;
-  width:500px;
-  height:100px;
-  padding:20px;
-  margin:0 auto;
+.query {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  height: 100px;
+  padding: 20px;
+  margin: 0 auto;
   margin-top: 30px;
 }
-.query input{
-  border:1px solid black;
-  outline:0;
-  border-radius:10px;
-  height:35px;
-  width:300px;
-  margin-right:20px;
+.query input {
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  height: 35px;
+  width: 300px;
+  margin-right: 20px;
+  padding: 5px;
 }
-.temperature{
-  min-height:300px;
-  padding:20px;
-  display:flex;
-  flex:1;
+.temperature {
+  min-height: 300px;
+  padding: 20px;
+  display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
 }
-.display div,h1,h2{
-  margin:0 auto;
+.display div,
+h1,
+h2 {
+  margin: 0 auto;
 }
-.weathericon img{
-width:200px;
-height:200px;
-margin-top:-20px;
+.weathericon img {
+  width: 200px;
+  height: 200px;
+  margin-top: -20px;
 }
-.details{
-  display:flex;
-  flex-direction:row;
+.details {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
-.details div{
-  width:calc(500/3)px;
-  height:100px;
-  display:flex;
-  flex-direction:row;
+.details div {
+  width: calc(500px / 3);
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
 }
-h4{
-  margin-top:15px;
+h4 {
+  margin-top: 15px;
 }
-.details img{
-  width:calc(500/3)-30 px;
-  height:100px;
-  margin-right:20px;
+.details img {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
 }
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
-span p{
-  color:black;
-  font-size:medium;
-  font-weight:700;
+
+span p {
+  color: black;
+  font-size: medium;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .query {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .query input {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details div {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 📌 For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .query {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .query input {
+    width: 90%;
+  }
+
+  .temperature h1 {
+    font-size: 1.5em;
+  }
+  .temperature h2 {
+    font-size: 1.2em;
+  }
+  .weathericon img {
+    width: 120px;
+    height: 120px;
+  }
+  .details div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .details img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
 }
