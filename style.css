@@ -80,15 +80,15 @@ body {
   max-width: 500px;
   margin-top: 20px;
   justify-content: space-between;
-  align-items: stretch;
   gap: 10px;
 }
 
 .details div {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 48%;
+  min-width: 48%;
   background: rgba(255, 255, 255, 0.2);
   padding: 12px;
   border-radius: 10px;
@@ -123,7 +123,6 @@ body {
   display: none;
 }
 
-
 @media (min-width: 1024px) {
   .main {
     max-width: 650px;
@@ -132,14 +131,12 @@ body {
     max-width: 550px;
   }
   .details {
-    justify-content: space-between;
-    gap: 15px; 
+    max-width: 600px;
   }
   .details div {
-    width: 48%; 
+    min-width: 48%;
   }
 }
-
 
 @media (max-width: 1023px) {
   .main {
@@ -149,15 +146,14 @@ body {
     width: 100%;
   }
   .details {
-    flex-direction: row;
     justify-content: center;
   }
   .details div {
-    width: 48%;
+    min-width: 48%;
   }
 }
 
-
+/* Mobile Screens */
 @media (max-width: 768px) {
   .query {
     flex-direction: column;
@@ -177,7 +173,6 @@ body {
   }
   .details div {
     width: 100%;
-    justify-content: center;
+    min-width: unset;
   }
 }
-
