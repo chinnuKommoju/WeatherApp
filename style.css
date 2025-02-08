@@ -116,37 +116,46 @@ span p {
     justify-content: center;
   }
 }
-
-/* 📌 For mobile screens (max-width: 480px) */
-@media (max-width: 480px) {
-  .query {
-    width: 100%;
+@media (max-width: 768px) {
+  .main {
+    min-width: 100%;
     padding: 10px;
   }
 
-  .query input {
+  .query {
+    flex-direction: column;
     width: 90%;
+    align-items: center;
   }
 
-  .temperature h1 {
-    font-size: 1.5em;
-  }
-  .temperature h2 {
-    font-size: 1.2em;
-  }
-  .weathericon img {
-    width: 120px;
-    height: 120px;
-  }
-  .details div {
+  .query input {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    margin-bottom: 10px;
   }
-  .details img {
+
+  .search {
     width: 50px;
     height: 50px;
-    margin-bottom: 5px;
+  }
+
+  .display {
+    width: 100%;
+    text-align: center;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details div {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .weathericon img {
+    width: 150px;
+    height: 150px;
   }
 }
