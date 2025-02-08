@@ -131,6 +131,7 @@ body {
     max-width: 550px;
   }
   .details {
+     justify-content: center;
     max-width: 600px;
   }
   .details div {
