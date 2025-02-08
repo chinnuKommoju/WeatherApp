@@ -3,14 +3,25 @@ const api_key = '4cca31eae40ebc82d167a5e49498369e';
 const search = document.querySelector('.search');
 const display = document.querySelector('.display');
 const img = document.querySelector('#condition-img');
-
 search.addEventListener('click', async () => {
-  let city = inp.value.trim(); 
-  
-  if (city === '') {
+  const city = inp.value.trim();
+  if (!city) {
     alert("Enter a City name");
     return;
   }
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("City Not Found");
+
+    const data = await response.json();
+    displayWeather(data);
+  } catch (error) {
+    alert(error.message);
+    console.error(error);
+  }
+});
+
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
 
