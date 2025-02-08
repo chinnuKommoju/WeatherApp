@@ -18,8 +18,6 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
-  justify-content: center;
 }
 
 .query {
@@ -69,26 +67,33 @@ body {
   align-items: center;
   padding: 20px;
 }
+
 .weathericon img {
   width: 150px;
   height: 150px;
 }
+
 .details {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
   margin-top: 20px;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
 }
+
 .details div {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 45%; 
+  width: 48%;
   background: rgba(255, 255, 255, 0.2);
   padding: 12px;
   border-radius: 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 .details img {
@@ -117,21 +122,25 @@ body {
 .hidden {
   display: none;
 }
+
+
 @media (min-width: 1024px) {
   .main {
-    width: 600px;
+    max-width: 650px;
   }
   .query {
-    max-width: 500px;
+    max-width: 550px;
   }
   .details {
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 15px; 
   }
   .details div {
-    width: 45%;
+    width: 48%; 
   }
 }
+
+
 @media (max-width: 1023px) {
   .main {
     width: 95%;
@@ -147,6 +156,8 @@ body {
     width: 48%;
   }
 }
+
+
 @media (max-width: 768px) {
   .query {
     flex-direction: column;
