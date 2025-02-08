@@ -10,6 +10,36 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.main {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.query {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.query input {
+  flex: 1;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+}
+
 .search {
   width: 60px;
   height: 60px;
@@ -22,39 +52,17 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .search:hover {
   transform: scale(1.10);
 }
 
-.main {
-  width: 90%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.query {
-  display: flex;
-  width: 100%;
-  max-width: 500px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.query input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 10px;
-  outline: none;
-}
 .display {
   text-align: center;
   margin-top: 20px;
   width: 100%;
 }
+
 .temperature {
   display: flex;
   flex-direction: column;
@@ -77,9 +85,9 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 45%;
+  width: 45%; 
   background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
 }
 
@@ -87,23 +95,57 @@ body {
   width: 35px;
   height: 35px;
 }
+
 .details span {
   display: flex;
   gap: 5px;
   align-items: center;
 }
+
 .details h4 {
   font-size: 16px;
   margin: 0;
 }
+
 .details p {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: black;
 }
+
 .hidden {
   display: none;
+}
+@media (min-width: 1024px) {
+  .main {
+    width: 600px;
+  }
+  .query {
+    max-width: 500px;
+  }
+  .details {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .details div {
+    width: 45%;
+  }
+}
+@media (max-width: 1023px) {
+  .main {
+    width: 95%;
+  }
+  .query {
+    width: 100%;
+  }
+  .details {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .details div {
+    width: 48%;
+  }
 }
 @media (max-width: 768px) {
   .query {
