@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div class="query">
+      <input type="text" placeholder="Enter City Name" required>
+      <button type="button" class="search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>
+    </button>
+    </div>
+    <div class="display hidden" >
+    <div class="temperature">
+      <div class="weathericon">
+        <img src="./images/temp.png" alt="Temperature">
+      </div>
+      <h1 id="temp">Temp</h1>
+      <h2 id="city">City name</h2>
+    </div>
+    <div class="details">
+      <div class="condition"><img src="./images/clear.png" alt="condition" id="condition-img"><span><h4>Condition:</h4><p id="condition"></p></span></div>
+      <div class="humidity"><img src="./images/humidity.png" alt="humidity"><span><h4>Humidity:</h4><p id="humidity"></p></span></div>
+      <div class="windspeed"><img src="./images/windspeed.png" alt="windspeed"><span><h4>WindSpeed:</h4><p id="windspeed"></p></span></div>
+    </div>
+    </div>
+    
+  <script src="script.js"></script>
+</body>
+</body>
+</html>
