@@ -21,47 +21,22 @@ search.addEventListener('click', async () => {
     console.error(error);
   }
 });
-
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error("City Not Found");
-    }
-
-    const data = await response.json();
-    displayWeather(data);
-  } catch (error) {
-    alert(error.message);
-    console.error(error);
-  }
-});
-
 function displayWeather(data) {
   inp.value = ''; 
   display.classList.remove('hidden');
-
-  const condition = data.weather[0].description;
+  const condition = data.weather[0].description.toLowerCase();
   const humidity = data.main.humidity;
   const windspeed = data.wind.speed;
-  const temp = data.main.temp;
+  const temp = Math.round(data.main.temp);
   const city = data.name;
-
-  document.getElementById('temp').innerText = `${temp}°C `;
+  document.getElementById('temp').innerText = `${temp}°C`;
   document.getElementById('city').innerText = city;
-  document.getElementById('condition').innerText = condition;
+  document.getElementById('condition').innerText = condition.charAt(0).toUpperCase() + condition.slice(1);
   document.getElementById('humidity').innerText = `${humidity}%`;
   document.getElementById('windspeed').innerText = `${windspeed} m/s`;
-
-  const c = condition.toLowerCase();
-  
- 
   const weatherImages = {
     clear: './images/clear.png',
-    clouds: './images/cloud.png',
+    cloud: './images/cloud.png',
     rain: './images/rain.png',
     thunderstorm: './images/thunderstorm.png',
     snow: './images/snow.png',
@@ -73,12 +48,12 @@ function displayWeather(data) {
     squall: './images/squall.jpg',
     drizzle: './images/drizzle.png'
   };
-
   for (const key in weatherImages) {
-    if (c.includes(key)) {
+    if (condition.includes(key)) {
       img.src = weatherImages[key];
       return;
     }
   }
-  img.src = './images/drizzle.png';
+
+  img.src = './images/default.png';
 }
